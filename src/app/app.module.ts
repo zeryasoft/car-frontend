@@ -15,7 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {CarImageDetailComponent} from './components/carimagedetail/carimagedetail.component'
 
 import {FormsModule,ReactiveFormsModule } from "@angular/forms"
-import{BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import{BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { CarimageComponent } from './components/carimage/carimage.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import{BrowserAnimationsModule} from "@angular/platform-browser/animations"
     CustomerComponent,
     ColorComponent,
     RentalComponent,
-    CarImageDetailComponent
+    CarImageDetailComponent,
+    CarimageComponent
   ],
   imports: [
     BrowserModule,

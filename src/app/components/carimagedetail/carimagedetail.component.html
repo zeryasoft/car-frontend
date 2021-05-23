@@ -1,39 +1,50 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
-      <div class="row">
-        <table *ngFor="let carimagedetail of carimagedetails">
-          <tr>
-            <td>Car Name :</td>
-            <td>{{ carimagedetail.carName }}</td>
-          </tr>
-          <tr>
-            <td>Brand Name:</td>
-            <td>{{ carimagedetail.brandName }}</td>
-          </tr>
-          <tr>
-            <td>Color Name:</td>
-            <td>{{ carimagedetail.colorName }}</td>
-          </tr>
-          <tr>
-            <td>Daily Price:</td>
-            <td>{{ carimagedetail.dailyPrice }}</td>
-          </tr>
-          <tr>
-            <td>Model Year :</td>
-            <td>{{ carimagedetail.modelYear }}</td>
-          </tr>
-          <tr>
-            <td>Image Path :</td>
-            <td>
-              {{ carimagedetail.imagePath }}
-            </td>
-          </tr>
-          <tr>
-            <td>Date :</td>
-            <td>{{ carimagedetail.date }}</td>
-          </tr>
-        </table>
+    <div *ngIf="car">
+      <div class="card-body">
+        <div class="row">
+          <div id="brand" class="col-sm-3">
+            <h4 class="card-title" style="text-align: center">Brand</h4>
+            <p class="card-text" style="text-align: center">
+              {{ car.brandName }}
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h4 class="card-title" style="text-align: center">Name</h4>
+            <p class="card-text" style="text-align: center">
+              {{ car.carName }}
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h4 class="card-title" style="text-align: center">Model</h4>
+            <p class="card-text" style="text-align: center">
+              {{ car.modelYear }}
+            </p>
+          </div>
+          <div class="col-sm-2">
+            <h4 class="card-title" style="text-align: center">Color</h4>
+            <p class="card-text" style="text-align: center">
+              {{ car.colorName }}
+            </p>
+          </div>
+
+          <div class="col-sm-3">
+            <h4 class="card-title" style="text-align: center">Daily Price</h4>
+            <p class="card-text" style="text-align: center">
+              {{ car.dailyPrice | currency: "₺" }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="place" *ngFor="let carImage of carimagedetails" class="card">
+        <img
+          id="btn"
+          *ngIf="carImage.imagePath"
+          [src]="defaultPath + carImage.imagePath"
+          class="card-img-top"
+          style="object-fit: cover"
+          alt="..."
+        />
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {CarComponent} from './components/car/car.component'
-import { CarImageDetailComponent } from './components/carimagedetail/carimagedetail.component';
+import { CarimageComponent } from './components/carimage/carimage.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CarComponent},  
@@ -10,7 +10,7 @@ const routes: Routes = [
   
   {path:"cars/color/:colorId",component:CarComponent},
 
-  {path:"carimages/getimagesbycarId/:carId",component:CarImageDetailComponent}
+  {path:"carimages/getbycarid/:carId",component:CarimageComponent}
 
   
 
