@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import{ToastrModule} from "ngx-toastr";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +11,12 @@ import { BrandComponent } from './components/brand/brand.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { ColorComponent } from './components/color/color.component';
 import { RentalComponent } from './components/rental/rental.component';
-import { HttpClientModule } from '@angular/common/http';
-import {CardetailComponent} from './components/cardetail/cardetail.component'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {CarImageDetailComponent} from './components/carimagedetail/carimagedetail.component'
+
+import {FormsModule,ReactiveFormsModule } from "@angular/forms"
+import{BrowserAnimationsModule} from "@angular/platform-browser/animations"
+
 
 @NgModule({
   declarations: [
@@ -21,14 +27,23 @@ import {CardetailComponent} from './components/cardetail/cardetail.component'
     CustomerComponent,
     ColorComponent,
     RentalComponent,
-    CardetailComponent
+    CarImageDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule ,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

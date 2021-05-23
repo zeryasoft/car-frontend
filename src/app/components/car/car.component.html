@@ -22,15 +22,13 @@
   </thead>
   <tbody>
     <tr
-    *ngFor="let car of cars"
-    
-      (click)="setCurrentCar(car)"
-      routerLink="/cars/getById/{{ car.carId }}"
-      
+      *ngFor="let car of cars"
+      (click)="setCurrentCarImage(car)"
+      routerLink="/carimages/getimagesbycarId/{{ car.carId }}"
     >
       <td>{{ car.carId }}</td>
       <td>{{ car.carName }}</td>
-      <td>{{ car.brandName }}</td>
+      <th scope="row">{{ car.brandName }}</th>
       <td>{{ car.colorName }}</td>
       <td>{{ car.dailyPrice }}</td>
       <td>{{ car.modelYear }}</td>

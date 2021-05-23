@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <table *ngFor="let carimagedetail of carimagedetails">
+          <tr>
+            <td>Car Name :</td>
+            <td>{{ carimagedetail.carName }}</td>
+          </tr>
+          <tr>
+            <td>Brand Name:</td>
+            <td>{{ carimagedetail.brandName }}</td>
+          </tr>
+          <tr>
+            <td>Color Name:</td>
+            <td>{{ carimagedetail.colorName }}</td>
+          </tr>
+          <tr>
+            <td>Daily Price:</td>
+            <td>{{ carimagedetail.dailyPrice }}</td>
+          </tr>
+          <tr>
+            <td>Model Year :</td>
+            <td>{{ carimagedetail.modelYear }}</td>
+          </tr>
+          <tr>
+            <td>Image Path :</td>
+            <td>
+              {{ carimagedetail.imagePath }}
+            </td>
+          </tr>
+          <tr>
+            <td>Date :</td>
+            <td>{{ carimagedetail.date }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
